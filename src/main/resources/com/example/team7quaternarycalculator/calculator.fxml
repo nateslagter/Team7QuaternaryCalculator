@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" style="-fx-border-image-width: 1; -fx-border-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.2" fx:controller="com.example.team7quaternarycalculator.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label fx:id="outputBox" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="68.0" style="-fx-border-image-width: 1; -fx-border-color: black;" textAlignment="RIGHT" />
+    <HBox>
+        <Button text="x²" onAction="#square" />
+        <Button text="√" onAction="#root" />
+        <Button text="÷" onAction="#divide" />
+    </HBox>
+    <HBox>
+        <Button text="2" />
+        <Button text="3" />
+        <Button text="x" onAction="#multiply" />
+    </HBox>
+    <HBox>
+        <Button text="0" />
+        <Button text="1" />
+        <Button text="-" onAction="#subtract" />
+    </HBox>
+    <HBox>
+        <Button text="=" onAction="#solve" />
+        <Button text="+" onAction="#add" />
+    </HBox>
+</VBox>
