@@ -13,45 +13,39 @@ public class CalculatorModel {
         int operandOne = Integer.parseInt(convertBaseFourToTen(inputOne));
         int operandTwo = Integer.parseInt(convertBaseFourToTen(inputTwo));
         int result = operandOne + operandTwo;
-        String resultString = convertBaseTenToFour(Integer.toString(result));
-        return resultString;
+        return convertBaseTenToFour(Integer.toString(result));
     }
 
     public String subtract(String inputOne, String inputTwo){
         int operandOne = Integer.parseInt(convertBaseFourToTen(inputOne));
         int operandTwo = Integer.parseInt(convertBaseFourToTen(inputTwo));
         int result = operandOne - operandTwo;
-        String resultString = convertBaseTenToFour(Integer.toString(result));
-        return resultString;
+        return convertBaseTenToFour(Integer.toString(result));
     }
 
     public String multiply(String inputOne, String inputTwo){
         int operandOne = Integer.parseInt(convertBaseFourToTen(inputOne));
         int operandTwo = Integer.parseInt(convertBaseFourToTen(inputTwo));
         int result = operandOne * operandTwo;
-        String resultString = convertBaseTenToFour(Integer.toString(result));
-        return resultString;
+        return convertBaseTenToFour(Integer.toString(result));
     }
 
     public String divide(String inputOne, String inputTwo){
         int operandOne = Integer.parseInt(convertBaseFourToTen(inputOne));
         int operandTwo = Integer.parseInt(convertBaseFourToTen(inputTwo));
         int result = operandOne / operandTwo;
-        String resultString = convertBaseTenToFour(Integer.toString(result));
-        return resultString;
+        return convertBaseTenToFour(Integer.toString(result));
     }
 
     public String square(String inputOne){
         int operandOne = Integer.parseInt(convertBaseFourToTen(inputOne));
         int result = operandOne * operandOne;
-        String resultString = convertBaseTenToFour(Integer.toString(result));
-        return resultString;
+        return convertBaseTenToFour(Integer.toString(result));
     }
 
     public String root(String inputOne){
         int operandOne = Integer.parseInt(convertBaseFourToTen(inputOne));
         double result = Math.sqrt(operandOne);
-        String resultString = convertBaseTenToFour(Integer.toString((int)(result)));
-        return resultString;
+        return convertBaseTenToFour(Integer.toString((int)(result)));
     }
 }

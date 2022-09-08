@@ -23,4 +23,41 @@ public class CalculatorModelTest {
 
         Assertions.assertEquals("3662",convertedNum);
     }
+
+    @Test
+    public void TestAddition()
+    {
+        String result = calculatorModel.add("2203","3302");
+
+    }
+
+    @Test
+    public void TestSubtraction()
+    {
+
+    }
+
+    @Test
+    public void TestDivision()
+    {
+
+    }
+
+    @Test
+    public void TestMultiplication()
+    {
+
+    }
+
+    @Test
+    public void TestSquare()
+    {
+
+    }
+
+    @Test
+    public void TestSquareRoot()
+    {
+
+    }
 }
