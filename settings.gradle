@@ -1,1 +1,3 @@
 rootProject.name = "Team7QuaternaryCalculator"
+include 'test'
+
