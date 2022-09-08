@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="20.0" stylesheets="stylesheet.css"
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@stylesheet.css"
       xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.2"
       fx:controller="com.example.team7quaternarycalculator.HelloController">
     <padding>
@@ -19,17 +19,17 @@
         <Button text="÷"/>
     </HBox>
     <HBox>
-        <Button text="2"/>
-        <Button text="3"/>
+        <Button styleClass="number" text="2"/>
+        <Button styleClass="number" text="3"/>
         <Button text="x"/>
     </HBox>
     <HBox>
-        <Button text="0"/>
-        <Button text="1"/>
+        <Button styleClass="number" text="0"/>
+        <Button styleClass="number" text="1"/>
         <Button text="-"/>
     </HBox>
     <HBox>
-        <Button text="="/>
+        <Button styleClass="equal-sign" text="="/>
         <Button text="+"/>
     </HBox>
 </VBox>

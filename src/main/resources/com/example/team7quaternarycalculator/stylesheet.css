@@ -1,0 +1,25 @@
+.button{
+    -fx-background-color: orange;
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+    -fx-border-color: black;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+}
+
+.number {
+    -fx-background-color: light gray;
+    -fx-min-width: 30px;
+}
+
+.equal-sign{
+    -fx-min-width: 60px;
+}
+
+.label{
+    -fx-min-width: 90px;
+}
+
+HBox{
+    -fx-alignment: center;
+}
