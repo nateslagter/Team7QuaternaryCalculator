@@ -4,29 +4,32 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="20.0" style="-fx-border-image-width: 1; -fx-border-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.2" fx:controller="com.example.team7quaternarycalculator.HelloController">
+<VBox alignment="CENTER" spacing="20.0" stylesheets="stylesheet.css"
+      xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.2"
+      fx:controller="com.example.team7quaternarycalculator.HelloController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="outputBox" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="68.0" style="-fx-border-image-width: 1; -fx-border-color: black;" textAlignment="RIGHT" />
+    <Label fx:id="outputBox" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="68.0"
+           style="-fx-border-image-width: 1; -fx-border-color: black;" textAlignment="RIGHT"/>
     <HBox>
-        <Button text="x²" onAction="#square" />
-        <Button text="√" onAction="#root" />
-        <Button text="÷" onAction="#divide" />
+        <Button text="x²"/>
+        <Button text="√"/>
+        <Button text="÷"/>
     </HBox>
     <HBox>
-        <Button text="2" />
-        <Button text="3" />
-        <Button text="x" onAction="#multiply" />
+        <Button text="2"/>
+        <Button text="3"/>
+        <Button text="x"/>
     </HBox>
     <HBox>
-        <Button text="0" />
-        <Button text="1" />
-        <Button text="-" onAction="#subtract" />
+        <Button text="0"/>
+        <Button text="1"/>
+        <Button text="-"/>
     </HBox>
     <HBox>
-        <Button text="=" onAction="#solve" />
-        <Button text="+" onAction="#add" />
+        <Button text="="/>
+        <Button text="+"/>
     </HBox>
 </VBox>
