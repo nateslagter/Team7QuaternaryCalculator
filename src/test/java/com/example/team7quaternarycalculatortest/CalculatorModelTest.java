@@ -29,35 +29,46 @@ public class CalculatorModelTest {
     {
         String result = calculatorModel.add("2203","3302");
 
+        Assertions.assertEquals("12111",result);
     }
 
     @Test
     public void TestSubtraction()
     {
+        String result = calculatorModel.subtract("3201010","3001");
 
+        Assertions.assertEquals("3132003",result);
     }
 
     @Test
     public void TestDivision()
     {
+        String result = calculatorModel.divide("1210","121");
 
+        Assertions.assertEquals("10",result);
     }
 
     @Test
     public void TestMultiplication()
     {
+        String result = calculatorModel.multiply("10","121");
 
+        Assertions.assertEquals("1210",result);
     }
 
     @Test
     public void TestSquare()
     {
+        String result = calculatorModel.square("222");
 
+        Assertions.assertEquals("123210", result);
     }
 
     @Test
     public void TestSquareRoot()
     {
+        String result = calculatorModel.root("1321");
 
+        Assertions.assertEquals("23", result);
     }
 }
