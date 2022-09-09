@@ -1,5 +1,5 @@
 .button{
-    -fx-background-color: orange;
+    -fx-background-color: #FFA500FF;
     -fx-min-width: 30px;
     -fx-min-height: 30px;
     -fx-border-color: black;
@@ -8,7 +8,7 @@
 }
 
 .number {
-    -fx-background-color: light gray;
+    -fx-background-color: #808080FF;
     -fx-min-width: 30px;
 }
 
@@ -22,4 +22,17 @@
 
 HBox{
     -fx-alignment: center;
+}
+
+.outputBox {
+    -fx-pref-height: 45;
+    -fx-min-height: 45;
+    -fx-min-width: 150;
+    -fx-pref-width: 150;
+    -fx-font-size: 30;
+}
+
+.calc-box{
+    -fx-min-height: 300;
+    -fx-pref-height: 300;
 }

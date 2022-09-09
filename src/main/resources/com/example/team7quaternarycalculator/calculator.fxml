@@ -4,32 +4,31 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="20.0" stylesheets="@stylesheet.css"
-      xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.2"
-      fx:controller="com.example.team7quaternarycalculator.HelloController">
+<VBox alignment="CENTER" minHeight="300.0" prefHeight="300.0" spacing="20.0" styleClass="calc-box" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.team7quaternarycalculator.CalculatorController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <Label fx:id="outputBox" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="68.0"
-           style="-fx-border-image-width: 1; -fx-border-color: black;" textAlignment="RIGHT"/>
+    <Label fx:id="outputBox" alignment="CENTER_RIGHT" minWidth="150.0" prefHeight="45.0" prefWidth="150.0" style="-fx-border-image-width: 1; -fx-border-color: black;" styleClass="outputBox" textAlignment="RIGHT" />
     <HBox>
-        <Button text="x²"/>
-        <Button text="√"/>
-        <Button text="÷"/>
+        <Button onAction="#convert" text="⇆" />
+        <Button onAction="#square" text="x²" />
+        <Button onAction="#root" text="√" />
+        <Button onAction="#setOperatorDivide" text="÷" />
     </HBox>
     <HBox>
-        <Button styleClass="number" text="2"/>
-        <Button styleClass="number" text="3"/>
-        <Button text="x"/>
+        <Button onAction="#handleTwoButton" styleClass="number" text="2" />
+        <Button onAction="#handleThreeButton" styleClass="number" text="3" />
+        <Button onAction="#setOperatorTimes" text="x" />
     </HBox>
     <HBox>
-        <Button styleClass="number" text="0"/>
-        <Button styleClass="number" text="1"/>
-        <Button text="-"/>
+        <Button onAction="#handleZeroButton" styleClass="number" text="0" />
+        <Button onAction="#handleOneButton" styleClass="number" text="1" />
+        <Button onAction="#setOperatorMinus" text="-" />
     </HBox>
     <HBox>
-        <Button styleClass="equal-sign" text="="/>
-        <Button text="+"/>
+        <Button onAction="#clearBoard" text="c" />
+        <Button onAction="#solve" styleClass="equal-sign" text="=" />
+        <Button onAction="#setOperatorPlus" text="+" />
     </HBox>
 </VBox>
