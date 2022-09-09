@@ -9,7 +9,7 @@ JUnit: Used for unit tests
 
 ## Task Distribution
 Connor Pflederer = Mathematical Functions (*,+,-,/)\
-Peyton Schaefer = FXML\
+Peyton Schaefer = FXML and Controller\
 Nathaniel Slagter = Unit Tests\
 Mars Williams = Decimal to Base 4 Converter\
 Kiri Woodruff = CSS and README
