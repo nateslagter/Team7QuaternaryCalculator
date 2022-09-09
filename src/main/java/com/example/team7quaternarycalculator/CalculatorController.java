@@ -5,10 +5,6 @@ import javafx.scene.control.Label;
 
 public class CalculatorController {
 
-    //work on resetting the questions when the solution is showing, right now if you
-    //type it just adds to operand 2, it should clear the operator and set operandPresent
-    //and solutionPresent to false
-
     public CalculatorModel calculatorModel = new CalculatorModel();
     public Label outputBox;
     public boolean operatorPresent = false;
@@ -18,27 +14,22 @@ public class CalculatorController {
     public String operator;
     public String solution;
     public String convertedString = "";
-
+    public String output = "";
     public boolean converted = false;
-
-    protected void printDiog() {
-        System.out.println("Operand 1: " + operand1);
-        System.out.println("Operand 2: " + operand2);
-        System.out.println("Operator: " + operator);
-        System.out.println("Solution: " + solution);
-        System.out.println("SolutionPresent: " + solutionPresent);
-        System.out.println("Converted: " + converted);
-    }
 
     protected void updateOutputBox() {
         if (converted) {
-            outputBox.setText(convertedString);
+            output = convertedString;
+            outputBox.setText(output);
         } else if (!operatorPresent && !solutionPresent) {
-            outputBox.setText(operand1);
+            output = operand1;
+            outputBox.setText(output);
         } else if (solutionPresent) {
-            outputBox.setText(solution);
+            output = solution;
+            outputBox.setText(output);
         } else {
-            outputBox.setText(operand2);
+            output = operand2;
+            outputBox.setText(output);
         }
     }
 
@@ -47,141 +38,49 @@ public class CalculatorController {
         operand1 = "";
         operand2 = "";
         operator = "";
+        output = "";
         operatorPresent = false;
         solutionPresent = false;
+        converted = false;
         updateOutputBox();
-        printDiog();
     }
 
-    @FXML
-    protected void handleZeroButton() {
+    protected void handleNumberButton(String number){
         converted = false;
         if (solutionPresent) {
             clearBoard();
         }
         if (!operatorPresent) {
-            operand1 += "0";
+            operand1 += number;
         } else {
-            operand2 += "0";
+            operand2 += number;
         }
         updateOutputBox();
-        printDiog();
     }
 
-    @FXML
-    protected void handleOneButton() {
+    protected void handleOperation(String targetOperator){
         converted = false;
-        if (solutionPresent) {
-            clearBoard();
-        }
-        if (!operatorPresent) {
-            operand1 += "1";
-        } else {
-            operand2 += "1";
-        }
-        updateOutputBox();
-        printDiog();
-    }
-
-    @FXML
-    protected void handleTwoButton() {
-        converted = false;
-        if (solutionPresent) {
-            clearBoard();
-        }
-        if (!operatorPresent) {
-            operand1 += "2";
-        } else {
-            operand2 += "2";
-        }
-        updateOutputBox();
-        printDiog();
-    }
-
-    @FXML
-    protected void handleThreeButton() {
-        converted = false;
-        if (solutionPresent) {
-            clearBoard();
-        }
-        if (!operatorPresent) {
-            operand1 += "3";
-        } else {
-            operand2 += "3";
-        }
-        updateOutputBox();
-        printDiog();
-    }
-
-    @FXML
-    protected void setOperatorPlus() {
-        converted = false;
+        output = "";
         if (operand1.equals("") || solutionPresent) {
             return;
         }
-        operator = "+";
+        operator = targetOperator;
         operatorPresent = true;
         updateOutputBox();
-        printDiog();
     }
 
-    @FXML
-    protected void setOperatorMinus() {
-        converted = false;
-        if (operand1.equals("") || solutionPresent) {
-            return;
-        }
-        operator = "-";
-        operatorPresent = true;
-        updateOutputBox();
-        printDiog();
-    }
-
-    @FXML
-    protected void setOperatorTimes() {
-        converted = false;
-        if (operand1.equals("") || solutionPresent) {
-            return;
-        }
-        operator = "*";
-        operatorPresent = true;
-        updateOutputBox();
-        printDiog();
-    }
-
-    @FXML
-    protected void setOperatorDivide() {
-        converted = false;
-        if (operand1.equals("") || solutionPresent) {
-            return;
-        }
-        operator = "/";
-        operatorPresent = true;
-        updateOutputBox();
-        printDiog();
-    }
-
-    @FXML
-    protected void square() {
+    protected void handleSingleOperation(String operation){
         converted = false;
         if (solutionPresent || operatorPresent) {
             return;
         }
-        solution = calculatorModel.square(operand1);
-        solutionPresent = true;
-        updateOutputBox();
-    }
-
-    @FXML
-    protected void root() {
-        converted = false;
-        if (solutionPresent || operatorPresent) {
-            return;
+        if(operation.equals("root")){
+            solution = calculatorModel.root(operand1);
+        } else if(operation.equals("square")){
+            solution = calculatorModel.square(operand1);
         }
-        solution = calculatorModel.root(operand1);
         solutionPresent = true;
         updateOutputBox();
-        printDiog();
     }
 
     @FXML
@@ -212,20 +111,20 @@ public class CalculatorController {
                 updateOutputBox();
             }
         }
-        printDiog();
     }
 
     @FXML
     protected void convert() {
-        if (converted) {
+        if (converted || output.equals("")) {
             converted = false;
             convertedString = "";
         } else {
-            if (!operand1.equals("") && !solutionPresent) {
-                convertedString = calculatorModel.convertBaseFourToTen(operand1);
-                converted = true;
-            } else if (!solutionPresent) {
+            if (!operand2.equals("") && !solutionPresent){
                 convertedString = calculatorModel.convertBaseFourToTen(operand2);
+                converted = true;
+            }
+            else if (!operand1.equals("") && !solutionPresent) {
+                convertedString = calculatorModel.convertBaseFourToTen(operand1);
                 converted = true;
             } else {
                 convertedString = calculatorModel.convertBaseFourToTen(solution);
@@ -233,5 +132,55 @@ public class CalculatorController {
             }
         }
         updateOutputBox();
+    }
+
+    @FXML
+    protected void handleZeroButton() {
+        handleNumberButton("0");
+    }
+
+    @FXML
+    protected void handleOneButton() {
+        handleNumberButton("1");
+    }
+
+    @FXML
+    protected void handleTwoButton() {
+        handleNumberButton("2");
+    }
+
+    @FXML
+    protected void handleThreeButton() {
+        handleNumberButton("3");
+    }
+
+    @FXML
+    protected void setOperatorPlus() {
+        handleOperation("+");
+    }
+
+    @FXML
+    protected void setOperatorMinus() {
+        handleOperation("-");
+    }
+
+    @FXML
+    protected void setOperatorTimes() {
+        handleOperation("*");
+    }
+
+    @FXML
+    protected void setOperatorDivide() {
+        handleOperation("/");
+    }
+
+    @FXML
+    protected void square() {
+        handleSingleOperation("square");
+    }
+
+    @FXML
+    protected void root() {
+        handleSingleOperation("root");
     }
 }
