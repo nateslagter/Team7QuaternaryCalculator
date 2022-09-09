@@ -16,6 +16,7 @@ Kiri Woodruff = CSS and README
 
 ## Meetings
 Date/Time: Tuesday September 6, 7:00 PM\
-Attended: Peyton, Nathaniel, Mars, Kiri\
+Attended* : Peyton, Nathaniel, Mars, Kiri\
 Medium: Zoom\
-Discussed: Task Distribution
+Discussed: Task Distribution\
+*Connor discussed with the team ahead of time that he had conflicts with work, and would not be able to attend meetings. 
