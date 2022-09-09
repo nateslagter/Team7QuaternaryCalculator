@@ -24,7 +24,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'com.example.team7quaternarycalculator'
-    mainClass = 'com.example.team7quaternarycalculator.HelloApplication'
+    mainClass = 'com.example.team7quaternarycalculator.CalculatorApplication'
 }
 
 javafx {
