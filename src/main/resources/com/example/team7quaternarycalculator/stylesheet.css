@@ -1,19 +1,22 @@
 .button{
-    -fx-background-color: #FFA500FF;
-    -fx-min-width: 30px;
-    -fx-min-height: 30px;
+    -fx-background-color: #BB7500;
+    -fx-min-width: 40px;
+    -fx-pref-width: 40px;
+    -fx-min-height: 40px;
     -fx-border-color: black;
     -fx-border-radius: 50px;
     -fx-background-radius: 50px;
+    -fx-font-size: 14pt;
+    -fx-text-fill: #ffffff;
 }
 
 .number {
-    -fx-background-color: #808080FF;
+    -fx-background-color: #808080;
     -fx-min-width: 30px;
 }
 
 .equal-sign{
-    -fx-min-width: 60px;
+    -fx-min-width: 80px;
 }
 
 .label{
@@ -27,12 +30,22 @@ HBox{
 .outputBox {
     -fx-pref-height: 45;
     -fx-min-height: 45;
-    -fx-min-width: 150;
-    -fx-pref-width: 150;
+    -fx-min-width: 170;
+    -fx-pref-width: 170;
     -fx-font-size: 30;
+    -fx-background-color: #afafaf;
 }
 
 .calc-box{
     -fx-min-height: 300;
     -fx-pref-height: 300;
+    -fx-background-color: #4C4C4C;
+}
+
+.squareButton {
+    -fx-font-size: 13pt !important;
+}
+
+.convertButton{
+    -fx-font-size: 12.5pt !important;
 }

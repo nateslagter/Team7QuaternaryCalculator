@@ -11,24 +11,51 @@
 
     <Label fx:id="outputBox" alignment="CENTER_RIGHT" minWidth="150.0" prefHeight="45.0" prefWidth="150.0" style="-fx-border-image-width: 1; -fx-border-color: black;" styleClass="outputBox" textAlignment="RIGHT" />
     <HBox>
-        <Button onAction="#convert" text="⇆" />
-        <Button onAction="#square" text="x²" />
-        <Button onAction="#root" text="√" />
+        <Button onAction="#convert" text="⭮" styleClass="convertButton">
+         <HBox.margin>
+            <Insets right="5.0" />
+         </HBox.margin></Button>
+        <Button onAction="#square" styleClass="squareButton" text="x²">
+         <HBox.margin>
+            <Insets right="5.0" />
+         </HBox.margin></Button>
+        <Button onAction="#root" text="√">
+         <HBox.margin>
+            <Insets right="5.0" />
+         </HBox.margin></Button>
         <Button onAction="#setOperatorDivide" text="÷" />
     </HBox>
     <HBox>
-        <Button onAction="#handleTwoButton" styleClass="number" text="2" />
+        <Button onAction="#handleTwoButton" styleClass="number" text="2">
+         <HBox.margin>
+            <Insets right="10.0" />
+         </HBox.margin></Button>
         <Button onAction="#handleThreeButton" styleClass="number" text="3" />
-        <Button onAction="#setOperatorTimes" text="x" />
+        <Button onAction="#setOperatorTimes" text="x">
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin></Button>
     </HBox>
     <HBox>
-        <Button onAction="#handleZeroButton" styleClass="number" text="0" />
+        <Button onAction="#handleZeroButton" styleClass="number" text="0">
+         <HBox.margin>
+            <Insets right="10.0" />
+         </HBox.margin></Button>
         <Button onAction="#handleOneButton" styleClass="number" text="1" />
-        <Button onAction="#setOperatorMinus" text="-" />
+        <Button onAction="#setOperatorMinus" text="-">
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin></Button>
     </HBox>
     <HBox>
-        <Button onAction="#clearBoard" text="c" />
+        <Button onAction="#clearBoard" text="c">
+         <HBox.margin>
+            <Insets right="10.0" />
+         </HBox.margin></Button>
         <Button onAction="#solve" styleClass="equal-sign" text="=" />
-        <Button onAction="#setOperatorPlus" text="+" />
+        <Button onAction="#setOperatorPlus" text="+">
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin></Button>
     </HBox>
 </VBox>
